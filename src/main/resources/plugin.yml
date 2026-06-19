@@ -1,0 +1,35 @@
+name: PrismDuels
+version: '${project.version}'
+main: com.prismsmp.duels.PrismDuels
+api-version: '1.21'
+description: Custom duel system for Prism SMP
+author: Prism SMP
+softdepend:
+  - PlaceholderAPI
+  - EternalCombat
+
+commands:
+  duel:
+    description: Challenge a player to a duel using your real inventory
+    usage: /duel <player|accept|deny|spectate>
+    permission: prismduel.use
+  practiceduel:
+    description: Challenge a player to a practice duel with preset kits
+    usage: /practiceduel <player> <gamemode>
+    permission: prismduel.use
+  duelstats:
+    description: View duel statistics
+    usage: /duelstats [player]
+    permission: prismduel.use
+  duels:
+    description: Admin commands for the duel system
+    usage: /duels <enable|disable|generate|listarenas|removearena|reload>
+    permission: prismduel.admin
+
+permissions:
+  prismduel.use:
+    description: Allows using the duel system
+    default: true
+  prismduel.admin:
+    description: Admin commands for duel system
+    default: op
